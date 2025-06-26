@@ -1,9 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://31.128.44.179:5432/spring_postgres_db
-    username: postgres
-    password: passwd
+    url: ${DB_URL:jdbc:postgresql://31.128.44.179:5432/spring_postgres_db}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:passwd}
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
